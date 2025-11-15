@@ -1,0 +1,9 @@
+- ใช้ vite ในการสร้าง project เพื่อจะทำให้การจัดการไฟล์มีโครงสร้างที่ดี
+- vite จะช่วยในการทำ fetch ไปหา backend โดยจะใช้ url ในเพื่อ fetch ที่อยู่ในไฟล์ 
+- .env ( .env ถ้าเป็นทำใน local vite จะ fetch โดยอิง url จากไฟล์นี้ / ถ้าเป็นตอน deploy vite จะไปเอา url จาก .env.production )
+- การที่จะดึง path ที่เก็บ url โดยการใช้ vite จะใช้วิธีนี้ "import.meta.env.VITE_APP_URL" มันจะทำการเข้าไปอ่านไฟล์ .env เพื่อเอา url มาแทน
+
+
+GET method
+- GET method จะทำการส่ง request เพื่อขอดึงข้อมูลจาก backend แล้วเอามาแสดงที่หน้า frontend
+- เมื่อส่ง request ไปตอนที่ function จะคืนค่ากลับต้องใช้ await เพื่อให้รอ backend ส่งค่ากลับมาก่อนแล้วค่อย return เพราะถ้าไม่รอมันจะคืนค่า null ไปตอนที่
