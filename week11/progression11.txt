@@ -1,0 +1,24 @@
+--- charCount ---
+setup()
+    - สร้างตัวแปรเพื่อจะเข้าถึง id messageBox ของตัวรับ input
+    - ใส่ event input แล้วส่งไปหา function cahrCounting
+
+cahrCounting()
+    - สร้างตัวแปรเพื่อจะเข้าดึง id messageBox ของตัวรับ input
+    - สร้างตัวแปรเพื่อจะเข้าถึง id charCount เพื่อจะเปลี่ยนเลขเมื่อเกิด input
+    - ใช้ input.value.lenght เพื่อเช็คความยาวของ input โดยการเข้าถึง value ของมัน
+        - ใช้ textContent เพื่อเปลี่ยนเลขการนับด้วยการเอาความยาวมาแทน
+        - ถ้าความยาวน้อยกว่า 100 จะใช้ตัวอักษรเป็นสีดำ
+        - ถ้ามากกว่า 100 จะใช้สีแดง
+
+
+--- togglePassword ---
+setup()
+    - สร้างตัวแปรเพื่อจะเข้าถึง id togglePassword ของตัวรับ checkBox
+    - ใส่ event click แล้วส่งไปหา function changeDisplayMode
+
+changeDisplayMode()
+    - สร้างตัวแปรเพื่อจะเข้าดึง id password ของตัวรับ input
+    - เช็ค type ของ password โดยใช้ password.type
+        - ถ้า type เป็น password ให้เปลี่ยนเป็น text
+        - ถ้าเป็น text ให้เปลี่ยนเป็น password
