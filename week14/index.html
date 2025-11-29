@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รวมโจทย์ DOM 10 ข้อ</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; transition: 0.3s; }
+        section { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; background-color: #f9f9f9; }
+        h3 { margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        /* CSS สำหรับข้อ 10 Dark Mode */
+        .dark-mode { background-color: #333; color: white; }
+        .dark-mode section { border-color: #555; background-color: #444; }
+        .dark-mode h3 { border-bottom-color: #666; }
+        .dark-mode input, .dark-mode textarea { background-color: #555; color: white; border: 1px solid #777; }
+    </style>
+</head>
+<body id="main-body">
+    <h1>แบบฝึกหัด JavaScript DOM (10 ข้อ)</h1>
+    
+    <section>
+        <h3>1. ตรวจสอบรหัสผ่าน (Password Matcher)</h3>
+        <input type="password" id="pass1" placeholder="รหัสผ่าน">
+        <input type="password" id="pass2" placeholder="ยืนยันรหัสผ่าน">
+        <span id="msg-match" style="margin-left: 10px; font-weight: bold;"></span>
+    </section>
+
+    <section>
+        <h3>2. คำนวณราคาสินค้า (Price Calculator)</h3>
+        <p>ราคาต่อชิ้น: 100 บาท</p>
+        <input type="number" id="qty" placeholder="จำนวนสินค้า">
+        <p>ราคารวม: <span id="total-price" style="font-weight: bold;">0</span> บาท</p>
+    </section>
+
+    <section>
+        <h3>3. ปรับขนาดตัวอักษร (Font Resizer)</h3>
+        <button id="btn-dec">- ลดขนาด</button>
+        <button id="btn-inc">+ เพิ่มขนาด</button>
+        <p id="content-text" style="font-size: 16px; margin-top: 10px; transition: 0.2s;">ทดสอบปรับขนาดข้อความตรงนี้</p>
+    </section>
+
+    <section>
+        <h3>4. ปลดล็อกปุ่มส่งข้อมูล (Terms Checker)</h3>
+        <label>
+            <input type="checkbox" id="accept-terms"> ฉันยอมรับเงื่อนไขการใช้งาน
+        </label>
+        <br><br>
+        <button id="submit-btn" disabled>ส่งข้อมูล</button>
+    </section>
+
+    <section>
+        <h3>5. ตรวจสอบเลขคู่/คี่ (Even/Odd Checker)</h3>
+        <input type="number" id="num-input" placeholder="ใส่ตัวเลข">
+        <button id="check-even-odd-btn">ตรวจสอบ</button>
+        <div id="result-box" style="margin-top: 10px; padding: 5px; border-radius: 4px;">ผลลัพธ์จะแสดงที่นี่</div>
+    </section>
+
+    <section>
+        <h3>6. นับจำนวนตัวอักษร (Character Counter Limit 50)</h3>
+        <textarea id="msg-input" rows="3" style="width: 100%;" placeholder="พิมพ์ข้อความ..."></textarea>
+        <p>เหลืออีก: <span id="char-remaining">50</span> ตัวอักษร</p>
+    </section>
+
+    <section>
+        <h3>7. เปลี่ยนสีกล่องตามลำดับ (Color Slider)</h3>
+        <div id="color-box" style="width: 100%; height: 50px; background-color: red; margin-bottom: 10px; border-radius: 4px; transition: 0.3s;"></div>
+        <button id="next-color-btn">เปลี่ยนสีถัดไป</button>
+    </section>
+
+    <section>
+        <h3>8. รายการสิ่งที่ต้องทำ (Todo List)</h3>
+        <input type="text" id="todo-input" placeholder="พิมพ์รายการ...">
+        <button id="add-todo-btn">เพิ่ม</button>
+        <ul id="todo-list">
+            </ul>
+    </section>
+
+    <section>
+        <h3>9. แปลงค่าเงิน USD -> THB</h3>
+        <p>อัตราแลกเปลี่ยน: 1 USD = 35 THB</p>
+        <input type="number" id="usd-input" placeholder="จำนวน USD">
+        <button id="convert-btn">คำนวณ</button>
+        <p>เป็นเงินไทย: <span id="thb-result" style="font-weight: bold; font-size: 1.2em;">0</span> บาท</p>
+    </section>
+
+    <section>
+        <h3>10. สลับโหมด มืด/สว่าง (Dark Mode Toggle)</h3>
+        <button id="theme-toggle-btn" style="padding: 10px 20px; cursor: pointer;">เปลี่ยนเป็น Dark Mode</button>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+- ให้ AI สร้างโจทย์ที่เกี่ยวกับการเขียน DOM และ Logic ทั้งหมด 10 ข้อ
+
+- ข้อที่ 1 : ระบบตรวจสอบรหัสผ่านตรงกัน (Password Matcher)
+    - สร้าง function passwordMatcher() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา checkMatch
+    - checkMatch เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ passwordMatcher()
+    - setup()
+        - สร้างตัวแปร p2 เพื่อเก็บค่าของ confirm password 
+        - เพิ่ม event input ให้ p2 ส่งไปหา checkMatch
+        - เข้าถึง id ของ password ตัวแรกแล้วเพิ่ม event input ไปหา checkMatch เหมือนกัน
+    - checkMatch
+        - สร้างตัวแปรเพื่อเก็บ input ที่ user กรอกเข้ามาของ p1 และ p2
+        - สร้างตัวแปร msg เพื่อเข้าถึง id msg-match
+        - นำมาเช็คว่าถ้า p1 หรือ p2 เป็น empty string ให้ตั้ง textContent ของ msg เป็น ''
+        - ถ้า p1 ตรงกันกับ p2 จะเพิ่ม textContent ของ msg เป็น ('Password is match') และเปลี่ยนสีตัวอักษรเป็นสีเขียว
+        - ถ้าไม่ตรงกันจะแสดงข้อมความ ('Password not match') และเปลี่ยนเป็นสีแดง
+    - return 2 method ออกไปเป็น object
+
+- ข้อที่ 2: เครื่องคำนวณราคาสินค้า (Price Calculator) 
+    - สร้าง function priceCalculator() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา calculate
+    - calculate เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ priceCalculator()
+    - setup()
+        - สร้างตัวแปร inputQty เพื่อเข้าถึง id inputQty
+        - เพิ่ม event input ให้ inputQty ส่งไปหา calculate
+    - calculate()
+        - สร้างตัวแปร input เพื่อเข้าถึง id qty
+        - สร้างตัวแปร display เพื่อเข้าถึง id total-price
+        - สร้างตัวแปร pricePerUnit และตั้ง default เป็น 100
+        - สร้างตัวแปร quantity เพื่อเก็บ value ของ input และเปลี่ยนเป็นจำนวนเต็ม
+        - นำ quantity มาเช็คว่า เป็นตัวเลขไหมหรือน้อยกว่า 0 ไหม ถ้าตรงจะตั้ง quantity = 0
+        - สร้างตัวแปร total เพื่อเอา quantity มาคูณกับ pricePerUnit
+        - ตั้ง textContent ของ display เป็น total เพื่อแสดงผลลัพธ์
+    - return 2 method ออกไปเป็น object
+
+- ข้อที่ 3: ปุ่มเพิ่ม/ลด ขนาดตัวอักษร (Font Resizer)
+    - สร้าง function fontResizer() โดยในนี้จะมีอยู่ 2 method
+    - สร้างตวแปร currentSize โดยตั้งค่า default เป็น 16
+    - method setup ใช้เพื่อส่ง event ไปหา updateSize
+    - updateSize เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ fontResizer()
+    - setup()
+        - สร้างตัวแปร btnInc เพื่อเข้าถึง id btn-inc
+        - สร้างตัวแปร btnDec เพื่อเข้าถึง id btn-dec
+        - เพิ่ม event click ให้ btnInc ส่งไปหา updateSize โดยมี parameter 2
+        - เพิ่ม event click ให้ btnDec ส่งไปหา updateSize โดยมี parameter -2
+    - updateSize()
+        - สร้างตัวแปร text เพื่อเข้าถึง id content-text
+        - สร้างตัวแปร newSize เพื่อเอา currentSize มาบวกกับ parameter ที่รับมา
+        - ถ้า newSize อยู่ระหว่าง 10 ถึง 30 จะแทน currentSize ด้วย newSize และเปลี่ยน fontsize เป็นตัวใหม่
+        - ถ้าไม่ใช่ให้ alert (font size must be between 10px - 30px)
+    - return 2 method ออกไปเป็น object
+
+- ข้อที่ 4: ปลดล็อกปุ่มส่งข้อมูล (Enable Submit Button)
+    - สร้าง function termsChecker() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา toggleButton
+    - toggleButton เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ termsChecker()
+    - setup()
+        - สร้างตัวแปร checkbox เพื่อเข้าถึง id accept-terms
+        - เพิ่ม event change ให้ checkbox ส่งไปหา toggleButton
+    - toggleButton()
+        - สร้างตัวแปร checkbox เพื่อเข้าถึง id accept-terms
+        - สร้างตัวแปร btn เพื่อเข้าถึง id submit-btn
+        - ถ้า checkbox มีการกดจะตั้งให้ btn เป็น enable
+        - ถ้าไม่มีการกดจะตั้งให้ btn เป็น disable
+    - return 2 method ออกไปเป็น object
+
+ข้อที่ 5: ตัวกรองตัวเลขคู่/คี่ (Even/Odd Checker)
+    - สร้าง function evenOddChecker() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา checkNumber
+    - checkNumber เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ evenOddChecker()
+    - setup()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id check-even-odd-btn
+        - เพิ่ม event click ให้ btn ส่งไปหา checkNumber
+    - checkNumber()
+        - สร้างตัวแปร input เพื่อเข้าถึง id num-input
+        - สร้างตัวแปร result เพื่อเข้าถึง id result-box
+        - สร้างตัวแปร num เพื่อเข้าถึง เพื่อเก็บ value ที่เป็นจำนวนเต็มของ input
+        - ถ้า num ไม่ใช่ตัวเลขจะเปลี่ยน textContent ของ result เป็น (Plase enter number) และเปลี่ยนสีพื้นหลัง และจบ function
+        - ถ้า num num % 2 === 0 จะเปลี่ยน textContent ของ result เป็น (it is a even number) เปลี่ยนสีพื้นหลังและเปลี่ยนสีตัวอักษรเป็นสีเขียว
+        - ถ้าไม่ใช่จะเปลี่ยน textContent ของ result เป็น (it is a odd number) เปลี่ยนสีพื้นหลังและเปลี่ยนสีตัวอักษรเป็นสีแดง
+    - return 2 method ออกไปเป็น object
