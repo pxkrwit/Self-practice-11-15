@@ -1,0 +1,99 @@
+- ให้ AI สร้างโจทย์ที่เกี่ยวหัวข้อที่จะออกสอบทั้งหมด 5 ข้อ
+
+- ข้อที่ 1: Date/Time - นาฬิกาดิจิทัล (Digital Clock)
+    - สร้าง function digitalClock() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา startClock
+    - startClock เป็น method ที่ทำเกี่ยวกับการทำให้เวลาทำงาน
+    - updateTime เป็น method การรับเวลาจาก user
+    - setup()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id start-clock-btn
+        - เพิ่ม event click ให้ btn ส่งไปหา startClock
+    - startClock()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id start-clock-btn
+        - ตั้ง btn เป็น disable และเพิ่ม textContent (loading...)
+        - เรียก function updateTime()
+        - ตั้ง setInterval(updateTime, 1000)
+    - updateTime()
+        - สร้างตัวแปร display เพื่อเข้าถึง id clock-display
+        - สร้างตัวแปร now เพื่อเก็บเวลาที่สร้างใหม่
+        - ตั้ง textContent ของ display เป็นเวลา timzone ประเทศไทย
+    - return 2 method ออกไปเป็น object
+
+- ข้อที่ 2: Date Calculation - คำนวณวันคงเหลือ (Deadline Counter)
+    - สร้าง function dayCalculator() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา calculateDifference
+    - calculateDifference เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ dayCalculator()
+    - setup()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id start-clock-btn
+        - เพิ่ม event click ให้ btn ส่งไปหา calculateDifference
+    - calculateDifference()
+        - สร้างตัวแปร inputDate เพื่อเก็บ value ของ id target-date
+        - สร้างตัวแปร display เพื่อเก็บเข้าถึง id result-days
+        - ถ้าไม่มี inputDate จะตั้ง textContent ของ display เป็น object (Please select date) และตั้ง className เป็น error และจบโปรแกรม
+        - สร้างตัวแปร target เพื่อสร้างเวลาใหม่ที่รับมาจาก user
+        - สร้างตัวแปร today เพื่อสร้างเวลา
+        - ตั้ง today.setHours(0,0,0,0)
+        - ตั้ง target.setHours(0,0,0,0)
+        - สร้างตัวแปรเพื่อเก็บ target - today
+        - สร้างตัวแปร diffDays เพื่อเก็บ Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+        - ถ้า diffDays มากกว่า 0 ตั้ง textContent เป็น (`เหลือเวลาอีก ${diffDays} วัน`) และตั้ง className เป็น success
+        - ถ้า diffDays เท่ากับ 0 ตั้ง textContent เป็น (ถึงกำหนดวันแล้ว (วันนี้)) และตั้ง className เป็น success
+        - ถ้าไม่ใช่ ตั้ง textContent เป็น (เลยกำหนดมาแล้ว ${Math.abs(diffDays)} วัน`) และตั้ง className เป็น error
+    - return 2 method ออกไป
+
+- ข้อที่ 3: Fetch API - ดึงข้อมูลผู้ใช้ (Simple Fetch)
+    - สร้าง function userFetcher() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา fetchData
+    - fetchData เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ userFetcher()
+    - setup()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id load-user-btn
+        - เพิ่ม event click ให้ btn ส่งไปหา fetchData
+    - fetchData()
+        - สร้างตัวแปร nameSpan เพื่อเข้าถึง id user-name
+        - สร้างตัวแปร emailSpan เพื่อเข้าถึง id user-email
+        - ตั้ง textContent ให้ nameSpan เป็น (loading...)
+        - ใช้ try...catch เพื่อป้องกันโปรแกรมทำงาน
+        - สร้างตัวแปรเพื่อเก็บข้อมูลที่ไป fetch มาจาก https://jsonplaceholder.typicode.com/users/1
+        - ถ้า response ไม่ใช่ 200 ให้ throw error
+        - สร้างตัวแปร data เพื่อใช้ข้อมูลจากที่ fetch มา
+        - ตั้ง textContent ของ nameSpan เป็น name ของที่ไป fetch มา
+        - ตั้ง textContent ของ emailSpan เป็น email ของที่ไป fetch มา
+    - return 2 method ออกไป
+
+- ข้อที่ 4: Fetch + List Rendering (แสดงรายการสินค้า)
+    - สร้าง function postList() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา loadPosts
+    - loadPosts เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ postList()
+    - setup()
+        - สร้างตัวแปร btn เพื่อเข้าถึง id load-posts-btn
+        - เพิ่ม event click ให้ btn ส่งไปหา loadPosts
+    - loadPosts()
+        - สร้างตัวแปร list เพื่อเก็บเข้าถึง id post-list 
+        - ตั้ง innerHTML เป็น '<li>กำลังโหลดข้อมูล...</li>'
+        - ใช้ try...catch เพื่อป้องกันโปรแกรมทำงาน
+            - สร้างตัวแปรเพื่อเก็บข้อมูลที่ไป fetch มาจาก https://jsonplaceholder.typicode.com/posts?_limit=5
+            - สร้างตัวแปรเพื่อใช้ข้อมูลที่ไป fetch มากกว่า
+            - ตั้ง innerHTML เป็น empty string
+            - เอา posts มา loadPosts    
+                - สร้าง tag li และเพิ่ม innerHTML เป็น `<strong>${post.title}</strong><br><span style="font-size:0.8em; color:gray;">ID: ${post.id}</span>`
+                - และ append เข้าไปใน list
+            - ถ้า error ตั้ง innerHTML ของ list เป็น '<li class="error">เกิดข้อผิดพลาดในการโหลด</li>'
+    - return 2 method ออกไป
+
+- ข้อที่ 5: รวมมิตร (Log Events with Timestamp)
+    - สร้าง function activityLogger() โดยในนี้จะมีอยู่ 2 method
+    - method setup ใช้เพื่อส่ง event ไปหา addLog
+    - addLog เป็น method ที่ทำเกี่ยวกับ logic ทั้งหมดของ activityLogger()
+    - setup()
+        - สร้างตัวแปร input เพื่อเข้าถึง id log-input
+        - เพิ่ม event change ให้ btn ส่งไปหา addLog
+    - addLog()
+        - สร้างตัวแปร input เพื่อเข้าถึง id log-input
+        - สร้างตัวแปร list เพื่อเข้าถึง id history-log
+        - ถ้า value ของ input เป็น empty string ให้จบโปรแกรม
+        - สร้างตัวแปร now เพื่อเก็บเวลา
+        - สร้างตัวแปร timeString เพื่อจัดรูปแบบของเวลาให้อยู่ในรูปแบบของไทย
+        - สร้่าง tag li และเพิ่ม textContent เป็น `[${timeString}] : ${input.value}`
+        - append li เข้าไปใน list
+        - ตั้ง value ของ input เป็น ''
+    - return 2 method ออกไป

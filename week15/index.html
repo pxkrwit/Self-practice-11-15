@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Preparation: DOM, Events, Fetch, Date</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        section { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #f9f9f9; }
+        h3 { margin-top: 0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        button { cursor: pointer; padding: 5px 10px; }
+        input { padding: 5px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #fff; border-bottom: 1px solid #eee; padding: 5px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+
+    <h1>แบบฝึกหัดเตรียมสอบ (DOM + Events + Fetch + Date)</h1>
+
+    <section>
+        <h3>1. Digital Clock (นาฬิกาดิจิทัล)</h3>
+        <h1 id="clock-display">00:00:00</h1>
+        <button id="start-clock-btn">เริ่มการทำงาน</button>
+    </section>
+
+    <section>
+        <h3>2. Days Remaining (นับถอยหลังวันสำคัญ)</h3>
+        <p>เลือกวันที่ต้องการคำนวณ:</p>
+        <input type="date" id="target-date">
+        <button id="calc-days-btn">คำนวณ</button>
+        <p id="result-days" style="font-weight: bold; font-size: 1.2em;">-</p>
+    </section>
+
+    <section>
+        <h3>3. User Profile (ดึงข้อมูล JSON)</h3>
+        <button id="load-user-btn">โหลดข้อมูล User 1</button>
+        <div id="user-info" style="margin-top: 10px;">
+            <p><strong>Name:</strong> <span id="user-name">-</span></p>
+            <p><strong>Email:</strong> <span id="user-email">-</span></p>
+        </div>
+    </section>
+
+    <section>
+        <h3>4. Post List (ดึงบทความ 5 รายการ)</h3>
+        <button id="load-posts-btn">โหลดบทความ</button>
+        <ul id="post-list" style="margin-top: 10px;"></ul>
+    </section>
+
+    <section>
+        <h3>5. Activity Log (บันทึกกิจกรรมพร้อมเวลา)</h3>
+        <input type="text" id="log-input" placeholder="พิมพ์ข้อความแล้วกด Enter..." style="width: 70%;">
+        <ul id="history-log" style="margin-top: 10px; border: 1px solid #ddd; padding: 10px; min-height: 50px; background: white;"></ul>
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+</html>
